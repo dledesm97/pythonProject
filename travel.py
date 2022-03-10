@@ -1,5 +1,7 @@
 from googletrans import Translator
 from geopy.distance import geodesic
+from countryinfo import CountryInfo
+from currency_converter import CurrencyConverter
 import language
 import os
 
@@ -41,11 +43,17 @@ def homepage():
     
     print("1. Translator")
     print("2. Find Distance Between Locations")
+    print("3. Quick Facts")
+    print("4. Currency Exchange")
     userInput = int(input("Your choice: "))
     if userInput == 1:
         menu()
     if userInput == 2:
         find_distance()
+    if userInput == 3:
+        quick_facts(destination)
+    if userInput == 4:
+        currency_converter()
     
 def titles():
     #os.system('clear')
@@ -86,6 +94,28 @@ def find_distance():
     print("-----Destinace Between In Miles-----")
     print(geodesic(location,destination).miles)
 
+def quick_facts(destination):
+    country = CountryInfo(destination)
+    data1 = country.alt_spellings()
+    print(data1)
+    data2 = country.capital()
+    print(data2)
+    data3 = country.currencies()
+    print(data3)
+    data4 = country.languages()
+    print(data4)
+    data5 = country.timezones()
+    print(data5)
+    data7 = country.borders()
+    print(data7)
+
+def currency_converter():
+    c = CurrencyConverter()
+    print("Exchange Your Currency")
+    current = input("Current Currency: ")
+    future = input("Expected Currency: ")
+    amount = float(input("How much do you want to exchange? "))
+    print(c.convert(amount, current, future))
 
 #if __name__ == '__main__':
    #homepage()
