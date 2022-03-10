@@ -5,14 +5,21 @@ import information
 import currency
 import os
 
+#importing the countries from the countries file in the same directory
 destination = countries.COUNTRIES
+
 def homepage():
     print("{:-^100}".format("-"))
     print("{:^100}".format("Where are you traveling?"))
     print("{:-^100}".format("-"))
+
     #display all the available countries for this program
     print(' '.join(destination))
+
+    #asking for user input and making it all uppercase when storing it in the variable
     country = (input("\nFrom the options above, please type your destination: ")).upper()
+    # keeping track of the user input and looping through the countries list
+    # to make sure it matches with at least one country if NOT ask for user input again
     counter = 0
     for x in destination:
         if country == x:
@@ -24,7 +31,8 @@ def homepage():
         
     
     #os.system('clear')
-    
+
+# Outputting the list of options that the user can do in this program
 def selection(country):
     print("1. Translator")
     print("2. Find Distance Between Locations")
@@ -33,17 +41,16 @@ def selection(country):
     print("5. Exit Program")
     userInput = int(input("Your choice: "))
     if userInput == 1:
-        translator.menu()
+        translator.menu()   #this function is in the translator.py file and we are calling it from here 
     if userInput == 2:
-        distance.find_distance()
+        distance.find_distance()    #calling the find_distance function from the distance file
     if userInput == 3:
         information.quick_facts(country)
     if userInput == 4:
         currency.currency_converter()
     if userInput == 5:
-        exit()
-#if __name__ == '__main__':
-   #homepage()
-   #titles()
-   #menu()
-homepage()
+        exit()              # killing the program if the user enters 5
+        
+if __name__ == '__main__':
+   homepage()
+#homepage()
