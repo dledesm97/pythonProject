@@ -1,6 +1,5 @@
 import translator
 import countries
-import distance
 import information
 import currency
 import os
@@ -37,20 +36,17 @@ def selection(country):
     while True:
         try:
             print("1. Translator")
-            print("2. Find Distance Between Locations")
-            print("3. Quick Facts")
-            print("4. Currency Exchange")
-            print("5. Exit Program")
+            print("2. Quick Facts")
+            print("3. Currency Exchange")
+            print("4. Exit Program")
             userInput = input("Your choice: ")
             if userInput == "1":
                 translator.menu()   #this function is in the translator.py file and we are calling it from here 
             elif userInput == "2":
-                distance.find_distance()    #calling the find_distance function from the distance file
-            elif userInput == "3":
                 information.quick_facts(country)
-            elif userInput == "4":
+            elif userInput == "3":
                 currency.currency_converter()
-            elif userInput == "5":
+            elif userInput == "4":
                 exit()              # killing the program if the user enters 5
             else:
                 print("Choice not found")
