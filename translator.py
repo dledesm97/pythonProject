@@ -8,14 +8,10 @@ language = language.LANGUAGES
 
 def menu():
     while True:
-        print('\a')
         print("{:-^30}".format("-"))
-        print("Choice")
-        print("1. Translate languages")
-        print("2. Available languages")
-        print("3. Exit program")
+        options = ["1. Translate Languages", "2. Available Languages", "3. Exit Program"]
+        print('\n'.join(options))
         print("{:-^30}".format("-"))
-        print("\a")
         choose = input("Your choice: ")
 
         if choose == "1":

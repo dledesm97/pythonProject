@@ -35,10 +35,8 @@ def homepage():
 def selection(country):
     while True:
         try:
-            print("1. Translator")
-            print("2. Quick Facts")
-            print("3. Currency Exchange")
-            print("4. Exit Program")
+            options = ["1. Translator", "2. Quick Facts", "3. Currency Exchange", "4. Exit Program"]
+            print('\n'.join(options))
             userInput = input("Your choice: ")
             if userInput == "1":
                 translator.menu()   #this function is in the translator.py file and we are calling it from here 
