@@ -14,7 +14,9 @@ Installation of CurrencyConverter which uses historical rates, this does not que
 real-time, and uses embedded data in the library which may be up to date and uses the European
 Central Bank as it's source.
 
-
+Installation of Countryinfo is needed for returning data about countries, ISO info and states/provinces 
+within them and most of the information included in this library is what is listed on Wikipedia and may
+contain minor errors
 
 ## Built With
 
