@@ -9,13 +9,11 @@ destination = countries.COUNTRIES
 
 def homepage():
     try:
-        print("{:-^100}".format("-"))
-        print("{:^100}".format("Where are you traveling?"))
-        print("{:-^100}".format("-"))
-
+        print("{:-^30}".format("-"))
+        print("{:^15}".format("Where are you traveling?"))
+        print("{:-^30}".format("-"))
         #display all the available countries for this program
         print(' '.join(destination))
-
         #asking for user input and making it all uppercase when storing it in the variable
         country = (input("\nFrom the options above, please type your destination: ")).upper()
         # keeping track of the user input and looping through the countries list
@@ -50,7 +48,6 @@ def selection(country):
                 print("Choice not found")
         except KeyboardInterrupt:
             print("Exiting Program")
-        
+
 if __name__ == '__main__':
    homepage()
-#homepage()
