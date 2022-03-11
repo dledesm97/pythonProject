@@ -1,6 +1,7 @@
 from countryinfo import CountryInfo
 
 def quick_facts(destination):
+
     new_destination = destination
     country = CountryInfo(destination)
     print("{:-^100}".format("-"))
@@ -23,3 +24,5 @@ def quick_facts(destination):
     print(f"\nCountries that surround {destination} are:")
     print (', '.join(borders))
     print("{:-^100}".format("-"))
+
+    
